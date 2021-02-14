@@ -5,6 +5,7 @@ import (
 	"io/ioutil"
 	"net/http"
 	"log"
+	"os"
 )
 
 func main() {
@@ -15,7 +16,7 @@ func main() {
 	res, err := client.Do(req)
 	if err != nil {
 		fmt.Println("[\033[91m!\033[0m] Connection error.")
-		return
+		os.Exit(1)
 	}
 	defer res.Body.Close()
 	body, _ := ioutil.ReadAll(res.Body)
