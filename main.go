@@ -28,6 +28,7 @@ func main() {
 
 			req.Header.Set("password", strings.Replace(pass, "\n", "", -1))
 			req.Header.Set("username", strings.Replace(user, "\n", "", -1))
+			req.Header.Set("user-agent", "Official Wantyapps Site API")
 			res, err := client.Do(req)
 			if err != nil {
 				fmt.Println("[\033[91m!\033[0m] Connection error.")
